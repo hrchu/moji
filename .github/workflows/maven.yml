@@ -31,6 +31,8 @@ jobs:
           
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetches the full git history
     - name: Wait for service to be ready
       run: |
         for i in $(seq 1 60); do
