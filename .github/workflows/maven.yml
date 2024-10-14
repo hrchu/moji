@@ -40,12 +40,11 @@ jobs:
           echo "Waiting for service to be ready..."
           sleep 1
         done
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
+    - name: Set up JDK 8
+      uses: actions/setup-java@v3
       with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
+        java-version: '8'       # Specify Java 8 version
+        distribution: 'temurin' # You can also specify another distribution like 'zulu', 'adopt'
     - name: Run Maven tests
       run: mvn verify
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
