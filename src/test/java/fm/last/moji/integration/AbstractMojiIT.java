@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012-2017 Last.fm & The "mogilefs-moji" committers
+ * Copyright (C) 2012-2024 Last.fm & The "mogilefs-moji" committers
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,14 +30,9 @@ import java.util.UUID;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.math.RandomUtils;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Rule;
+import org.junit.*;
 
-import fm.last.commons.test.file.DataFolder;
-import fm.last.commons.test.file.RootDataFolder;
+
 import fm.last.moji.MojiFile;
 import fm.last.moji.spring.SpringMojiBean;
 import fm.last.moji.tracker.UnknownKeyException;
@@ -45,7 +40,7 @@ import fm.last.moji.tracker.UnknownKeyException;
 @Ignore("abstract")
 abstract public class AbstractMojiIT {
 
-  @Rule
+  @ClassRule
   public static DataFolder dataFolder = new RootDataFolder();
 
   private final List<MojiFile> mojiFiles = new ArrayList<MojiFile>();
